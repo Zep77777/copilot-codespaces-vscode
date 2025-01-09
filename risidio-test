@@ -1,0 +1,30 @@
+import React, { useState } from 'react';
+
+const App: React.FC = () => {
+  const [connected, setConnected] = useState(false);
+
+  const handleConnectWallet = () => {
+    setConnected(true);
+  };
+
+  const handleBuyItem = () => {
+    alert('Item added to your account!');
+  };
+
+  return (
+    <div style={{ padding: '20px' }}>
+      <h1>Welcome to Risidio</h1>
+      {!connected ? (
+        <button onClick={handleConnectWallet}>Connect Wallet</button>
+      ) : (
+        <>
+          <h2>Wallet Connected</h2>
+          <button onClick={handleBuyItem}>Buy</button>
+        </>
+      )}
+    </div>
+  );
+};
+
+export default App;
+
